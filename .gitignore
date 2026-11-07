@@ -1,0 +1,19 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Adobe After Effects / Premiere Temp & Cache Files
+*.aep~
+*.prproj~
+Adobe Premiere Pro Video Previews/
+Adobe Premiere Pro Auto-Save/
+After Effects Crashes/
+After Effects Logs/
+
+# Node / Scratch
+node_modules/
+temp/
+scratch/
+*.tmp
+*.log
