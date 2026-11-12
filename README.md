@@ -9,7 +9,8 @@ A curated collection of modular, production-ready automation scripts for **Adobe
 | Script | Aesthetic / Effect Style | Workflow Support |
 | :--- | :--- | :--- |
 | **`CreateCascadingDeck.jsx`** | Viral "Ok Jaanu" Rolling Cascading Card Deck | 1-Click Premiere Dynamic Link |
-| **`CreateCrimsonShutterDrag.jsx`** | Wong Kar-wai Step-Printing & Crimson Shutter Drag | 1-Click Premiere Dynamic Link |
+| **`CreateShutterDrag.jsx`** | Wong Kar-wai Step-Printing & Shutter Drag (Natural / B&W / Crimson) | 1-Click Premiere Dynamic Link |
+| **`CreateCrimsonShutterDrag.jsx`** | Crimson / Aerochrome Shutter Drag Preset | 1-Click Premiere Dynamic Link |
 
 ---
 
@@ -33,25 +34,30 @@ Automates the viral Instagram Reel and CapCut/VN template trend popularized by t
 
 ---
 
-## 🔴 Script 2: `CreateCrimsonShutterDrag.jsx`
-### Wong Kar-wai Step-Printing & Crimson Shutter Drag Generator
+## 🏎️ Script 2: `CreateShutterDrag.jsx`
+### Wong Kar-wai Step-Printing & Shutter Drag Generator
 
 ![Cinematic Shutter Drag](https://img.shields.io/badge/Cinematic-Step--Printing-E60000?logo=quicktime&logoColor=white)
-![Kodak Aerochrome](https://img.shields.io/badge/Color%20Grade-Crimson%20Aerochrome-8B0000)
+![Natural Color Preserved](https://img.shields.io/badge/Color%20Grade-Natural%20%26%20Monochrome-00A86B)
 
 ### 🏮 Origin & Inspiration
-Recreates the legendary visual language of cinematographer **Christopher Doyle** and director **Wong Kar-wai** (*Fallen Angels*, *Chungking Express*, and The Weeknd's *After Hours*). It transforms raw night drives, subway rides, and street footage into long-exposure, dreamlike crimson cinema.
+Recreates the iconic slow-shutter step-printing visual language pioneered by cinematographer **Christopher Doyle** and director **Wong Kar-wai** (*Chungking Express*, *Fallen Angels*), seen extensively in viral travel, late-night car/rickshaw rides, and moody street edits (such as the viral *"Alarm behave yourself"* rickshaw trend).
 
 ### ✨ Features
-1. **12 FPS Step-Printing Motion Drag**:
-   * Uses low-framerate sampling with trailing multi-echo frame accumulation (`Maximum` blending) to create authentic light streaks and motion blur trails behind headlights, neon, and moving subjects.
-2. **Monochromatic Crimson & Amber Aerochrome Palette**:
-   * Remaps dark shadows to deep blood-crimson (`RGB: [0.14, 0.01, 0.02]`) and specular highlights into glowing warm amber/gold (`RGB: [1.00, 0.68, 0.28]`).
-3. **Diffuse Halation & Bloom**:
-   * Simulates vintage anamorphic film light bleeding around streetlights, tunnel fixtures, and reflective surfaces.
-4. **Super 8 Curved Film Gate**:
-   * Automatically adds an authentic curved, rounded-corner vignette border with soft organic edge falloff.
-5. **Seamless Dynamic Link Support**:
+1. **6.0 FPS Step-Printing Shutter Cadence**:
+   * Uses low-framerate sampling (`Posterize Time`) matching the empirical $5\text{--}6\text{ fps}$ hold rate of analog step-printing.
+2. **Long-Exposure Light Streaks & Shutter Drag**:
+   * Uses multi-echo temporal accumulation (`Maximum` blending) to produce crisp trailing light paths behind headlights, streetlights, neon signs, and fast-moving subjects without smearing the entire image into mud.
+3. **Natural Colors Preserved by Default**:
+   * **Zero unwanted tint!** By default, `COLOR_MODE = "NATURAL"` leaves 100% of your footage's native colors untouched while gently punching dynamic contrast.
+   * Also includes quick 1-line preset switches for:
+     * `"MONOCHROME"`: High-contrast film noir Black & White (as seen in *"Alarm behave yourself"*).
+     * `"CRIMSON"`: Deep crimson/amber vintage night look.
+4. **Diffuse Halation & Highlight Bloom**:
+   * Soft exposure bloom around light sources simulating slow-shutter film exposure.
+5. **Organic 35mm Analog Grain**:
+   * Native `Add Grain` (Final Output mode) or procedural noise for vintage texture.
+6. **Seamless Dynamic Link Support**:
    * Run directly on any linked Premiere Pro clip—all effects apply in-place with zero re-importing.
 
 ---
@@ -87,7 +93,7 @@ To make all scripts appear directly in your After Effects menu:
 
 ### 🗺️ Toolkit Roadmap
 - [x] Viral "Ok Jaanu" Cascading Card Deck Generator (`CreateCascadingDeck.jsx`)
-- [x] Wong Kar-wai Step-Printing & Crimson Shutter Drag (`CreateCrimsonShutterDrag.jsx`)
+- [x] Wong Kar-wai Step-Printing & Shutter Drag (`CreateShutterDrag.jsx` / `CreateCrimsonShutterDrag.jsx`)
 - [ ] 3x3 Editorial Multi-Screen Contact Sheet
 - [ ] 3D Vinyl / CD Jewel Case Spin & Eject
 - [ ] 2.5D Parallax Freeze-Frame Cutout
