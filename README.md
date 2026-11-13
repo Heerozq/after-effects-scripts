@@ -8,13 +8,38 @@ A curated collection of modular, production-ready automation scripts for **Adobe
 
 | Script | Aesthetic / Effect Style | Workflow Support |
 | :--- | :--- | :--- |
+| **`CreateOldFootage.jsx`** | CapCut "Old Footage" Retro Film & Projector Look | 1-Click Premiere Dynamic Link |
 | **`CreateCascadingDeck.jsx`** | Viral "Ok Jaanu" Rolling Cascading Card Deck | 1-Click Premiere Dynamic Link |
-| **`CreateShutterDrag.jsx`** | Wong Kar-wai Step-Printing & Shutter Drag (Natural / B&W / Crimson) | 1-Click Premiere Dynamic Link |
+| **`CreateShutterDrag.jsx`** | Wong Kar-wai Step-Printing & Shutter Drag | 1-Click Premiere Dynamic Link |
 | **`CreateCrimsonShutterDrag.jsx`** | Crimson / Aerochrome Shutter Drag Preset | 1-Click Premiere Dynamic Link |
 
 ---
 
-## 🎬 Script 1: `CreateCascadingDeck.jsx`
+## 📽️ Script 1: `CreateOldFootage.jsx`
+### The CapCut "Old Footage" Retro Film Generator
+
+![CapCut Retro](https://img.shields.io/badge/Style-CapCut%20Old%20Footage-000000?logo=tiktok&logoColor=white)
+![Sharp Subject](https://img.shields.io/badge/Subject-100%25%20In--Focus-brightgreen)
+![Dynamic Link](https://img.shields.io/badge/Workflow-1--Click%20Dynamic%20Link-EA77FF?logo=adobepremierepro&logoColor=white)
+
+### 🎞️ Origin & Inspiration
+Replicates the viral **"Old Footage"** filter and retro video effect featured heavily in **CapCut**, TikTok, and Instagram Reels (popularized by moody street edits like the viral *"Alarm behave yourself"* rickshaw trend).
+
+### ✨ Features
+* **Zero Ghosting & Zero Blur**: Unlike crude multi-echo presets, your subject's face, hands, and clothing remain **100% pin-sharp and in-focus**.
+* **Zero Fake Glow**: Eliminates artificial digital halos and milky washed-out blurs.
+* **6.0 FPS Projector Cadence**: Native `Posterize Time (6.0 FPS)` recreates the authentic hand-cranked 8mm/16mm film reel stutter.
+* **Mechanical Projector Flicker**: Adds organic $\pm 2.5\%$ mechanical exposure fluctuation simulating vintage projector lamps.
+* **High-Contrast Film Noir or Natural Color**:
+  * `"MONOCHROME"`: Rich, velvety black-and-white film noir (exact match for the *Alarm behave yourself* reference).
+  * `"NATURAL"`: Preserves 100% of your native footage colors while punching vintage film contrast.
+  * `"SEPIA_VINTAGE"`: Warm historic amber archival look.
+* **Organic 35mm Celluloid Grain**: Native `Add Grain (Final Output)` with zero digital banding.
+* **Soft Optical Lens Vignette**: Realistic lens falloff around the frame edges.
+
+---
+
+## 🃏 Script 2: `CreateCascadingDeck.jsx`
 ### The Viral "Ok Jaanu" Cascading Card Deck Generator
 
 ![After Effects Automation](https://img.shields.io/badge/Adobe%20After%20Effects-CC%202022%2B-9999FF?logo=adobeaftereffects&logoColor=white)
@@ -34,31 +59,18 @@ Automates the viral Instagram Reel and CapCut/VN template trend popularized by t
 
 ---
 
-## 🏎️ Script 2: `CreateShutterDrag.jsx`
-### Wong Kar-wai Step-Printing & Shutter Drag Generator
+## 🏎️ Script 3: `CreateShutterDrag.jsx`
+### Wong Kar-wai Step-Printing & Optical Shutter Drag Generator
 
 ![Cinematic Shutter Drag](https://img.shields.io/badge/Cinematic-Step--Printing-E60000?logo=quicktime&logoColor=white)
 ![Natural Color Preserved](https://img.shields.io/badge/Color%20Grade-Natural%20%26%20Monochrome-00A86B)
 
 ### 🏮 Origin & Inspiration
-Recreates the iconic slow-shutter step-printing visual language pioneered by cinematographer **Christopher Doyle** and director **Wong Kar-wai** (*Chungking Express*, *Fallen Angels*), seen extensively in viral travel, late-night car/rickshaw rides, and moody street edits (such as the viral *"Alarm behave yourself"* rickshaw trend).
+Recreates the slow-shutter step-printing visual language pioneered by cinematographer **Christopher Doyle** and director **Wong Kar-wai** (*Chungking Express*, *Fallen Angels*).
 
 ### ✨ Features
-1. **6.0 FPS Step-Printing Shutter Cadence**:
-   * Uses low-framerate sampling (`Posterize Time`) matching the empirical $5\text{--}6\text{ fps}$ hold rate of analog step-printing.
-2. **Long-Exposure Light Streaks & Shutter Drag**:
-   * Uses multi-echo temporal accumulation (`Maximum` blending) to produce crisp trailing light paths behind headlights, streetlights, neon signs, and fast-moving subjects without smearing the entire image into mud.
-3. **Natural Colors Preserved by Default**:
-   * **Zero unwanted tint!** By default, `COLOR_MODE = "NATURAL"` leaves 100% of your footage's native colors untouched while gently punching dynamic contrast.
-   * Also includes quick 1-line preset switches for:
-     * `"MONOCHROME"`: High-contrast film noir Black & White (as seen in *"Alarm behave yourself"*).
-     * `"CRIMSON"`: Deep crimson/amber vintage night look.
-4. **Diffuse Halation & Highlight Bloom**:
-   * Soft exposure bloom around light sources simulating slow-shutter film exposure.
-5. **Organic 35mm Analog Grain**:
-   * Native `Add Grain` (Final Output mode) or procedural noise for vintage texture.
-6. **Seamless Dynamic Link Support**:
-   * Run directly on any linked Premiere Pro clip—all effects apply in-place with zero re-importing.
+* **Dual-Layer Architecture**: Base layer keeps the subject 100% sharp while the top layer streaks only high-luminance light sources.
+* **Natural Colors Preserved by Default**: Leaves 100% of your footage's native colors untouched with zero unwanted tint.
 
 ---
 
@@ -92,8 +104,9 @@ To make all scripts appear directly in your After Effects menu:
 ---
 
 ### 🗺️ Toolkit Roadmap
+- [x] CapCut "Old Footage" Retro Film Look (`CreateOldFootage.jsx`)
 - [x] Viral "Ok Jaanu" Cascading Card Deck Generator (`CreateCascadingDeck.jsx`)
-- [x] Wong Kar-wai Step-Printing & Shutter Drag (`CreateShutterDrag.jsx` / `CreateCrimsonShutterDrag.jsx`)
+- [x] Wong Kar-wai Step-Printing & Optical Shutter Drag (`CreateShutterDrag.jsx`)
 - [ ] 3x3 Editorial Multi-Screen Contact Sheet
 - [ ] 3D Vinyl / CD Jewel Case Spin & Eject
 - [ ] 2.5D Parallax Freeze-Frame Cutout
