@@ -181,38 +181,57 @@
 
         // 5. Soft Optical Lens Vignette
         if (APPLY_VIGNETTE) {
-            var cw = targetComp.width;
-            var ch = targetComp.height;
-            var vigSolid = targetComp.layers.addSolid([0, 0, 0], "CapCut Film Vignette", cw, ch, 1);
-            vigSolid.moveToBeginning(); // Place on top
+            try {
+                var cw = targetComp.width;
+                var ch = targetComp.height;
+                var vigSolid = targetComp.layers.addSolid([0, 0, 0], "CapCut Film Vignette", cw, ch, 1);
+                vigSolid.moveToBeginning(); // Place on top
 
-            var mask = vigSolid.property("Masks").addProperty("Mask");
-            mask.maskMode = MaskMode.SUBTRACT; // Center transparent, edges dark
+                var maskGroup = vigSolid.property("Masks") || vigSolid.property("ADBE Mask Parade");
+                if (maskGroup) {
+                    var mask = maskGroup.addProperty("Mask") || maskGroup.addProperty("ADBE Mask Atom");
+                    if (mask) {
+                        mask.maskMode = MaskMode.SUBTRACT; // Center transparent, edges dark
 
-            var myShape = new Shape();
-            var left = cw * 0.05;
-            var right = cw * 0.95;
-            var top = ch * 0.05;
-            var bottom = ch * 0.95;
-            var cornerR = Math.min(cw, ch) * 0.35; // Large elliptical curve
+                        var myShape = new Shape();
+                        var left = cw * 0.05;
+                        var right = cw * 0.95;
+                        var top = ch * 0.05;
+                        var bottom = ch * 0.95;
+                        var cornerR = Math.min(cw, ch) * 0.35; // Large elliptical curve
 
-            myShape.vertices = [
-                [left + cornerR, top],
-                [right - cornerR, top],
-                [right, top + cornerR],
-                [right, bottom - cornerR],
-                [right - cornerR, bottom],
-                [left + cornerR, bottom],
-                [left, bottom - cornerR],
-                [left, top + cornerR]
-            ];
-            myShape.closed = true;
+                        myShape.vertices = [
+                            [left + cornerR, top],
+                            [right - cornerR, top],
+                            [right, top + cornerR],
+                            [right, bottom - cornerR],
+                            [right - cornerR, bottom],
+                            [left + cornerR, bottom],
+                            [left, bottom - cornerR],
+                            [left, top + cornerR]
+                        ];
+                        myShape.closed = true;
 
-            mask.property("Mask Shape").setValue(myShape);
-            mask.property("Mask Feather").setValue([cw * 0.22, ch * 0.22]); // Soft lens falloff
-            mask.property("Mask Opacity").setValue(VIGNETTE_STRENGTH);
+                        // Robust multi-version property access:
+                        var shapeProp = mask.maskShape || mask.property("ADBE Mask Shape") || mask.property("Mask Path") || mask.property("Mask Shape");
+                        if (shapeProp) {
+                            try { shapeProp.setValue(myShape); } catch(eShpVal) {}
+                        }
 
-            vigSolid.locked = true;
+                        var featherProp = mask.maskFeather || mask.property("ADBE Mask Feather") || mask.property("Mask Feather");
+                        if (featherProp) {
+                            try { featherProp.setValue([cw * 0.22, ch * 0.22]); } catch(eFthVal) {}
+                        }
+
+                        var opacityProp = mask.maskOpacity || mask.property("ADBE Mask Opacity") || mask.property("Mask Opacity");
+                        if (opacityProp) {
+                            try { opacityProp.setValue(VIGNETTE_STRENGTH); } catch(eOpVal) {}
+                        }
+                    }
+                }
+
+                vigSolid.locked = true;
+            } catch(eVignetteErr) {}
         }
     }
 
